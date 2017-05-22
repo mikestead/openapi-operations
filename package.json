@@ -1,6 +1,6 @@
 {
   "name": "openapi-operations",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Mike Stead",
   "license": "MIT",
   "main": "dist/openapi-operations.js",
