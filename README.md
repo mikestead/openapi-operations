@@ -1,5 +1,7 @@
 # OpenAPI Operations
 
+[![Build Status](https://travis-ci.org/mikestead/openapi-operations.svg?branch=master)](https://travis-ci.org/mikestead/openapi-operations)
+
 A small (~1kb) library to transform an OpenAPI spec into an array of operations.
 
 This opens up the use of higher order functions (map, filter, reduce, etc)
