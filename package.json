@@ -1,6 +1,6 @@
 {
   "name": "openapi-operations",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Mike Stead",
   "license": "MIT",
   "description": "Convert an OpenAPI spec into an array of Operations",
