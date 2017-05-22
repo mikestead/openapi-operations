@@ -106,7 +106,7 @@ Operation {
   ext: Object?
   parameters: Array<Parameter>
   responses: Array<Response>
-  security: Security?
+  security: Array<Security>?
 }
 
 ```

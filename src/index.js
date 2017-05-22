@@ -148,10 +148,6 @@ function getResponses(op) {
   });
 }
 
-function getConsumes(spec, op) {
-  return op.consumes || spec.consumes;
-}
-
 function getSecurity(op) {
   if (!op.security || !op.security.length) return;
 
@@ -173,14 +169,14 @@ function getSecurityDefinitions(spec, op) {
 }
 
 function copy() {
-  const src = {};
+  const dest = {};
   for (let i = 0; i < arguments.length; i++) {
     const obj = arguments[i];
     const keys = Object.keys(obj);
     for (let j = 0; j < keys.length; j++) {
       const key = keys[j];
-      src[key] = obj[key];
+      dest[key] = obj[key];
     }
   }
-  return src;
+  return dest;
 }
