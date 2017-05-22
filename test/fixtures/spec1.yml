@@ -1,0 +1,62 @@
+swagger: '2.0'
+info:
+  title: Services
+  version: 1.0.0
+  description: description
+host: https://test.spec.io
+basePath: /v1
+schemes:
+  - http
+produces:
+  - application/json
+securityDefinitions:
+  account:
+    type: oauth2
+    description: Account JWT token
+    flow: password
+    tokenUrl: /account/authorization
+    scopes:
+      User: General user
+      Admin: Site admin
+x-root: ext0
+paths:
+  /accounts/{id}:
+    x-path: ext1
+    get:
+      x-op1: ext2
+      x-op2: ext3
+      operationId: getAccount
+      description: Get the details of an account
+      tags:
+        - account
+      parameters:
+        - name: id
+          in: body
+          type: string
+          required: true
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Account'
+      security:
+        - account:
+          - User
+    parameters:
+      - name: id
+        in: query
+        type: string
+definitions:
+  Account:
+    type: object
+    required:
+      - id
+      - email
+    additionalProperties: false
+    properties:
+      id:
+        description: The id of the account.
+        type: string
+      email:
+        description: The email address belonging to the account.
+        type: string

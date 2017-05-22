@@ -1,0 +1,111 @@
+# The Json Schema defining an Operation
+type: object
+required:
+  - id
+  - method
+  - path
+  - tags
+  - group
+  - parameters
+  - responses
+additionalProperties: false
+properties:
+  base:
+    type: object
+  id:
+    type: string
+  summary:
+    type: string
+  description:
+    type: string
+  method:
+    type: string
+    enum:
+      - get
+      - put
+      - post
+      - delete
+      - options
+      - head
+      - patch
+  path:
+    type: string
+  basePath:
+    type: string
+  fullPath:
+    type: string
+  url:
+    type: string
+  parameters:
+    type: array
+    items:
+      type: object
+      required:
+        - name
+        - in
+      properties:
+        name:
+          type: string
+        in:
+          type: string
+        description:
+          type: string
+        type:
+          type: string
+        required:
+          type: boolean
+        schema:
+          type: object
+        items:
+          type: object
+        collectionFormat:
+          type: string
+        default:
+          type: string
+  tags:
+    type: array
+    items:
+      type: string
+  group:
+    type: string
+  ext:
+    type: object
+  pathExt:
+    type: object
+  security:
+    type: array
+    items:
+      type: object
+  schemes:
+    type: array
+    items:
+      type: string
+  contentTypes:
+    type: array
+    items:
+      type: string
+  accepts:
+    type: array
+    items:
+      type: string
+  consumes:
+    type: array
+    items:
+      type: string
+  produces:
+    type: array
+    items:
+      type: string
+  responses:
+    type: array
+    items:
+      type: object
+      required:
+        - code
+      properties:
+        code:
+          type: string
+        description:
+          type: string
+        scheam:
+          type: object

@@ -1,0 +1,50 @@
+{
+  "name": "openapi-operations",
+  "version": "0.0.1",
+  "author": "Mike Stead",
+  "license": "MIT",
+  "main": "dist/openapi-operations.js",
+  "module": "dist/openapi-operations.es.js",
+  "jsnext:main": "dist/openapi-operations.es.js",
+  "minified:main": "./dist/openapi-operations.min.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "rollup -c -w",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "prebuild": "npm run clean",
+    "build": "npm run transpile && npm run minify && npm run size",
+    "transpile": "rollup -c",
+    "minify": "uglifyjs $npm_package_main -c -m -o $npm_package_minified_main --source-map \"content=${npm_package_main}.map\"",
+    "size": "echo \"gzip size: $(gzip-size $npm_package_minified_main --raw | pretty-bytes)\"",
+    "format": "prettier --single-quote --write \"{src,test}/**/*.js\"",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-preset-env": "^1.2.2",
+    "buble": "^0.15.2",
+    "cross-env": "^5.0.0",
+    "cross-var": "^1.0.3",
+    "gzip-size-cli": "^2.0.0",
+    "husky": "^0.13.2",
+    "jest": "^19.0.2",
+    "js-yaml": "^3.8.2",
+    "jsonschema": "^1.1.1",
+    "lint-staged": "^3.4.0",
+    "mocha": "^3.2.0",
+    "prettier": "^0.22.0",
+    "pretty-bytes-cli": "^2.0.0",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-watch": "^3.2.2",
+    "uglify-js": "^3.0.10"
+  }
+}
