@@ -16,7 +16,7 @@ yarn install openapi-operations
 ## Usage
 
 ```JavaScript
-const openApiOperations = 'openapi-operations'
+const openApiOperations = require('openapi-operations')
 
 // load and parse your OpenAPI spec, either remotely or from local file system in Node
 const spec = await loadSpec()
