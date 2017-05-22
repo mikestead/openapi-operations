@@ -3,10 +3,21 @@
   "version": "0.1.0",
   "author": "Mike Stead",
   "license": "MIT",
+  "description": "Convert an OpenAPI spec into an array of Operations",
+  "repository": "mikestead/openapi-operations",
   "main": "dist/openapi-operations.js",
   "module": "dist/openapi-operations.es.js",
   "jsnext:main": "dist/openapi-operations.es.js",
   "minified:main": "./dist/openapi-operations.min.js",
+  "keywords": [
+    "openapi",
+    "swagger",
+    "rest"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "clean": "rimraf dist",
     "start": "rollup -c -w",
