@@ -10,7 +10,7 @@ to process the spec for your own needs.
 ## Install
 
 ```
-yarn install openapi-operations
+yarn add openapi-operations
 ```
 
 ## Usage
